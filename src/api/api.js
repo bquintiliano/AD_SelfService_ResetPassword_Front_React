@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const url = 'http://localhost:3333'
+const url = 'http://localhost:3333'  //Change here to IP from AD_SelfService_ResetPassword_Back
 
 const api = axios.create({
-    baseURL: 'http://localhost:3333'
+    baseURL: 'http://localhost:3333' //Change here to IP from AD_SelfService_ResetPassword_Back
 })
 
 
