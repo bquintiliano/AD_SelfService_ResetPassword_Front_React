@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Button, TextField, CircularProgress,Chip, Avatar } from '@material-ui/core'
 import logo from '../img/logo.jpg'
 import validatePassword from '../api/validate';
@@ -25,12 +25,12 @@ function ResetPassword({readUser, nextPage}){
         
         if(validatePassword(password) == 1){
             setError(true)
-            setText('Senha precisa ter mais que 6 digitos')
+            setText('Password must be more than 6 digits') //change your message here
         }
 
         if(validatePassword(password) == 2){
             setError(true)
-            setText('Senha precisa conter números e caracteres especiais')
+            setText('Password must contain numbers and special characters or contains invalid character') //change your message here
         }
 
         if(validatePassword(password) == 3){
@@ -68,7 +68,7 @@ function ResetPassword({readUser, nextPage}){
         <div align="center">
             <Chip
             
-            label={`Seja bem vindo(a) ${fullName}`}
+            label={`Welcome ${fullName}`}
             color="primary"
             
             /> 
@@ -84,7 +84,7 @@ function ResetPassword({readUser, nextPage}){
         type='password'
         error={error}
         helperText={text}  
-        label="Nova Senha" 
+        label="New Password"  //change your message here
         variant="outlined" 
         margin='normal'
         required
@@ -93,7 +93,7 @@ function ResetPassword({readUser, nextPage}){
         
        <div align='center' hidden={button}>
             <Button variant="contained" color="primary" type='submit'>
-                Alterar Senha
+                Change Password 
             </Button>
         </div>
 
@@ -104,7 +104,7 @@ function ResetPassword({readUser, nextPage}){
         <div hidden={chipOk} align="center">
             <Chip
             avatar={<Avatar>OK</Avatar>}
-            label="SENHA ALTERADA COM SUCESSO... VOLTANDO"
+            label="PASSWORD CHANGED SUCCESSFULLY... RETURNING"  //change your message here
             color="primary"
             variant="outlined"
             /> 
@@ -113,7 +113,7 @@ function ResetPassword({readUser, nextPage}){
         <div hidden={chipFail} align="center">
             <Chip
             avatar={<Avatar>X</Avatar>}
-            label="NÃO FOI POSSÍVEL ALTERAR SUA SENHA FAVOR ENTRAR EM CONTATO COM O SUPORTE... VOLTANDO"
+            label="UNABLE TO CHANGE YOUR PASSWORD PLEASE CONTACT SUPPORT... RETURNING" //change your message here
             color="secondary"
             variant="outlined"
             /> 

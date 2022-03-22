@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Button, TextField } from '@material-ui/core'
 import logo from '../img/logo.jpg'
 import {loginUser} from '../api/api'
@@ -18,7 +18,7 @@ function Login({writeUser, nextPage}){
      loginUser(user,password).then(res => {	
         if( res != 200){
            setError(true)
-           setText('Usuário ou senha incorreta')
+           setText('Wrong user or password') //change your message here
         }else{
             nextPage(1)
             writeUser(user)
@@ -41,7 +41,7 @@ function Login({writeUser, nextPage}){
         }} 
         type='text'
         error={error}
-        label="Usuário" 
+        label="User"   //change your message here
         variant="outlined"
         margin='normal'
         required
@@ -58,7 +58,7 @@ function Login({writeUser, nextPage}){
         type='password'
         error={error}
         helperText={text} 
-        label="senha" 
+        label="Password"   //change your message here
         variant="outlined" 
         margin='normal'
         required
@@ -67,7 +67,7 @@ function Login({writeUser, nextPage}){
         
         <div align='center'>
             <Button variant="contained" color="primary" type='submit' >
-                Logar
+                Login
             </Button>
         </div>
         

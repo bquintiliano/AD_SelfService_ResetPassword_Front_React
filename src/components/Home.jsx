@@ -4,7 +4,6 @@ import ResetPassword from './ResetPassword';
 
 
 function Home(){
-    //const [data, setData] = useState('')
     const [page, setPage] = useState(0)
     const [user, setUser] = useState('')
 
